@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Todos({ todosFiltered, filter, completeTodo, markAsEditing, CancleEdit, updateTodo, deleteTodo }) {
     // const lists = todosFiltered(filter).sort((a, b) =>{
     //     const aId = a.id

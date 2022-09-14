@@ -1,6 +1,4 @@
-import logo from '../logo.svg';
 import '../App.css';
-import { useRef} from 'react';
 import TodoList from './TodoList';
 import Notodo from './NoTodo';
 import TodoForm from './TodoForm';
@@ -30,20 +28,20 @@ function App() {
 
   const [todos, setTodos] = useLocalStorage('todos',[]);
 
-  // const [idForTodo, setIdForTodo] = useState(4);
-  const idForTodo = useRef(1);
+  const [idForTodo, setIdForTodo] = useLocalStorage('idForTodo', 1);
+  // const idForTodo = useRef(1);
   // const [name, setName] = useState('');
   const [name, setName] = useLocalStorage('name','');
 
   function addTodo(todo) {
     setTodos([...todos, {
-      id: idForTodo.current,
+      id: idForTodo,
       title: todo,
       isComplete: false,
       isEditing: false,
     },]);
 
-    idForTodo.current++;
+    setIdForTodo(preIdForTodo => preIdForTodo+1)
   }
 
   function deleteTodo(id) {

@@ -1,5 +1,3 @@
-import React from 'react'
-
 function FilterButton({setFilter, filter, todosFiltered}) {
     return (
         <div>

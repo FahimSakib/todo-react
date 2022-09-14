@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import FilterButton from './FilterButton';
 import Notodo from './NoTodo';
 import Todos from './Todos';
