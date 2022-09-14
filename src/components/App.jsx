@@ -4,27 +4,7 @@ import Notodo from './NoTodo';
 import TodoForm from './TodoForm';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-function App() {
-  // const [todos, setTodos] = useState([
-  //   {
-  //     id: 1,
-  //     title: 'Finish React Series',
-  //     isComplete: false,
-  //     isEditing: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Go Grocery',
-  //     isComplete: true,
-  //     isEditing: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'Take over world',
-  //     isComplete: false,
-  //     isEditing: false,
-  //   },
-  // ]);
+const App = () => {
 
   const [todos, setTodos] = useLocalStorage('todos',[]);
 
@@ -33,7 +13,7 @@ function App() {
   // const [name, setName] = useState('');
   const [name, setName] = useLocalStorage('name','');
 
-  function addTodo(todo) {
+  const addTodo = (todo) => {
     setTodos([...todos, {
       id: idForTodo,
       title: todo,
@@ -44,11 +24,9 @@ function App() {
     setIdForTodo(preIdForTodo => preIdForTodo+1)
   }
 
-  function deleteTodo(id) {
-    setTodos(todos.filter(todo => todo.id !== id));
-  }
+  const deleteTodo = (id) => setTodos(todos.filter(todo => todo.id !== id));
 
-  function completeTodo(id) {
+  const completeTodo = (id) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
@@ -58,7 +36,7 @@ function App() {
     setTodos(updatedTodos);
   }
 
-  function markAsEditing(id) {
+  const markAsEditing = (id) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
         todo.isEditing = true;
@@ -68,7 +46,7 @@ function App() {
     setTodos(updatedTodos);
   }
 
-  function updateTodo(event, id) {
+  const updateTodo = (event, id) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
         if (event.target.value.trim().length === 0) {
@@ -84,7 +62,7 @@ function App() {
     setTodos(updatedTodos);
   }
 
-  function CancleEdit(id) {
+  const CancleEdit = (id) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
         todo.isEditing = false;
@@ -94,15 +72,12 @@ function App() {
     setTodos(updatedTodos);
   }
 
-  function remaining() {
-    return todos.filter(todo => !todo.isComplete).length;
-  }
+  const remaining = () => todos.filter(todo => !todo.isComplete).length;
+ 
 
-  function clearCompleted() {
-    setTodos(todos.filter(todo => !todo.isComplete));
-  }
+  const clearCompleted = () => setTodos(todos.filter(todo => !todo.isComplete));
 
-  function checkAll() {
+  const checkAll = () => {
     const updatedTodos = todos.map(todo => {
       todo.isComplete = true;
       return todo;
@@ -111,7 +86,7 @@ function App() {
     setTodos(updatedTodos);
   }
 
-  function todosFiltered(filter) {
+  const todosFiltered = (filter) => {
     if (filter === 'all') {
       return todos;
     } else if (filter === 'active') {
@@ -122,7 +97,7 @@ function App() {
     }
   }
 
-  function unCheckAll() {
+  const unCheckAll = () => {
     const updatedTodos = todos.map(todo => {
       todo.isComplete = false;
       return todo;

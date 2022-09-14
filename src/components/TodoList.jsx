@@ -3,7 +3,7 @@ import FilterButton from './FilterButton';
 import Notodo from './NoTodo';
 import Todos from './Todos';
 
-function TodoList({ todos, completeTodo, markAsEditing, CancleEdit, updateTodo, deleteTodo, remaining, clearCompleted, checkAll, todosFiltered, unCheckAll, ...rest }) {
+const TodoList = ({ todos, completeTodo, markAsEditing, CancleEdit, updateTodo, deleteTodo, remaining, clearCompleted, checkAll, todosFiltered, unCheckAll, ...rest }) => {
 
   // console.log(todosFiltered('complete'))
   // console.log(rest);

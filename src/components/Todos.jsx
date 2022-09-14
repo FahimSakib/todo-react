@@ -1,4 +1,4 @@
-function Todos({ todosFiltered, filter, completeTodo, markAsEditing, CancleEdit, updateTodo, deleteTodo }) {
+const Todos = ({ todosFiltered, filter, completeTodo, markAsEditing, CancleEdit, updateTodo, deleteTodo }) => {
     // const lists = todosFiltered(filter).sort((a, b) =>{
     //     const aId = a.id
     //     const bId = b.id
@@ -7,11 +7,8 @@ function Todos({ todosFiltered, filter, completeTodo, markAsEditing, CancleEdit,
     // console.log(lists)
     return (
         <>
-
             <ul className="todo-list">
-
                 {todosFiltered(filter).map(todo => (
-
                     <li key={todo.id} className="todo-item-container">
                         <div className="todo-item">
                             <input type="checkbox"
@@ -40,7 +37,6 @@ function Todos({ todosFiltered, filter, completeTodo, markAsEditing, CancleEdit,
                         </button>
                     </li>
                 )).reverse()}
-
             </ul>
         </>
     )

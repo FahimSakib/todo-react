@@ -1,4 +1,4 @@
-function FilterButton({setFilter, filter, todosFiltered}) {
+const FilterButton = ({setFilter, filter, todosFiltered}) => {
     return (
         <div>
             <button onClick={() => { setFilter('all'); todosFiltered(filter); }} className={`button filter-button ${filter === 'all' ? 'filter-button-active' : ''}`}>
