@@ -1,20 +1,20 @@
 import { useState } from 'react'
 
 const TodoForm = ({ addTodo }) => {
-  const [todoInput, setTodoInput] = useState('');
+  const [todoInput, setTodoInput] = useState('')
 
-  const handleInput = (event) => setTodoInput(event.target.value);
+  const handleInput = (event) => setTodoInput(event.target.value)
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     if (todoInput.trim().length === 0) {
-      return;
+      return
     }
 
-    addTodo(todoInput);
+    addTodo(todoInput)
 
-    setTodoInput('');
+    setTodoInput('')
   }
 
   return (
