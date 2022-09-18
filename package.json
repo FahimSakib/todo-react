@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "pnpm": "^7.11.0",
     "prettier": "2.7.1"
   }
 }
