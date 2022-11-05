@@ -3,6 +3,7 @@ import TodoList from './TodoList'
 import Notodo from './NoTodo'
 import TodoForm from './TodoForm'
 import useLocalStorage from '../hooks/useLocalStorage'
+import { InfinitySpin } from 'react-loader-spinner'
 
 const App = () => {
   const [todos, setTodos] = useLocalStorage('todos', [])
@@ -143,6 +144,10 @@ const App = () => {
           <Notodo />
         )}
       </div>
+      <InfinitySpin 
+  width='200'
+  color="#4fa94d"
+/>
     </div>
   )
 }
